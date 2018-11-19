@@ -3,6 +3,7 @@
 ## Plugins used
 
 `(sudo) npm install -g cordova`
+
 `cordova plugin add cordova-plugin-whitelist`
 
 Puis configurer config.xml avec
