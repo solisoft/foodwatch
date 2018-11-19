@@ -34,22 +34,7 @@ var appCordova = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         appCordova.receivedEvent('deviceready');
-        cordova.plugins.barcodeScanner.scan(
-          function (result) {
-            console.log("We got a barcode\n" +
-                    "Result: " + result.text + "\n" +
-                    "Format: " + result.format + "\n" +
-                    "Cancelled: " + result.cancelled);
-            $$("#code").val(result.text)
-            mainView.router.navigate({
-              name: "product",
-              params: { id: result.text }
-            })
-          },
-          function (error) {
-              alert("Scanning failed: " + error);
-          }
-        )
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
