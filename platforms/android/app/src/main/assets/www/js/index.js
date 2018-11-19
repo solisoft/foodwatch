@@ -49,6 +49,7 @@ var appCordova = {
           function (error) {
               alert("Scanning failed: " + error);
           }
+        )
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -167,6 +168,35 @@ $$("#signin-btn").on("click", function(e) {
         titleRightText: 'now',
         subtitle: 'Bad login or password',
         text: 'It looks like you used wrong credentials',
+        closeTimeout: 3000,
+      });
+      notificationFull.open();
+    }
+  })
+})
+$$("#signup-btn").on("click", function(e) {
+  app.request.post("https://foxxy.ovh/_db/ema_api/api/auth/signup", JSON.stringify({
+    "first_name": $$("#firstname").val(),
+    "last_name": $$("#lastname").val(),
+    "email": $$("#signup-username").val(),
+    "password": $$("#signup-password").val(),
+    "password_confirmation": $$("#signup-password").val()
+  }), function(data, s, h){
+    data = JSON.parse(data)
+    if(data.success) {
+      window.localStorage.setItem("jwt", h.getResponseHeader('X-Session-Id'))
+      $$("#fav").removeClass("hidden")
+      $$("#logout").removeClass("hidden")
+      $$("#signin").addClass("hidden")
+      $$("#signup").addClass("hidden")
+      $$(".modal-in").addClass("modal-out")
+      $$(".modal-in").removeClass("modal-in")
+    } else {
+      var notificationFull = app.notification.create({
+        title: 'FoodWatch',
+        titleRightText: 'now',
+        subtitle: 'Error',
+        text: 'Something went wrong',
         closeTimeout: 3000,
       });
       notificationFull.open();
