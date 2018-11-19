@@ -80,6 +80,7 @@ var mainView = app.views.create('.view-main');
 var $$ = Dom7;
 
 var codebar = function(){
+  alert("open codebar")
   cordova.plugins.barcodeScanner.scan(
     function (result) {
       console.log("We got a barcode\n" +
