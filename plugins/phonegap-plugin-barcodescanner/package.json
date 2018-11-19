@@ -1,27 +1,24 @@
 {
-  "_from": "phonegap-plugin-barcodescanner@8.0.0",
+  "_from": "git+https://github.com/phonegap/phonegap-plugin-barcodescanner.git",
   "_id": "phonegap-plugin-barcodescanner@8.0.0",
   "_inBundle": false,
-  "_integrity": "sha512-8mWI2bsCwkuvqCFdG7tBXdUH4X3Ay1uXpnjxCS/If8qJIbv1eaI2XMNHN+V2+YUemJoZC7chlF76YXjeQXVEFg==",
+  "_integrity": "",
   "_location": "/phonegap-plugin-barcodescanner",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "phonegap-plugin-barcodescanner@8.0.0",
-    "name": "phonegap-plugin-barcodescanner",
-    "escapedName": "phonegap-plugin-barcodescanner",
-    "rawSpec": "8.0.0",
-    "saveSpec": null,
-    "fetchSpec": "8.0.0"
+    "type": "git",
+    "raw": "https://github.com/phonegap/phonegap-plugin-barcodescanner.git",
+    "rawSpec": "https://github.com/phonegap/phonegap-plugin-barcodescanner.git",
+    "saveSpec": "git+https://github.com/phonegap/phonegap-plugin-barcodescanner.git",
+    "fetchSpec": "https://github.com/phonegap/phonegap-plugin-barcodescanner.git",
+    "gitCommittish": null
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/phonegap-plugin-barcodescanner/-/phonegap-plugin-barcodescanner-8.0.0.tgz",
-  "_shasum": "bdad5454bcbb1c27b0ded0bc5c646227e7a91f06",
-  "_spec": "phonegap-plugin-barcodescanner@8.0.0",
+  "_resolved": "git+https://github.com/phonegap/phonegap-plugin-barcodescanner.git#9c200e002e447e3b6d950f9fccccbf0538c44bc5",
+  "_spec": "https://github.com/phonegap/phonegap-plugin-barcodescanner.git",
   "_where": "/home/soli/workspace/phonegap/foodwatch",
   "author": {
     "name": "Adobe PhoneGap Team"
