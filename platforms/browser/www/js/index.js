@@ -48,7 +48,6 @@ var appCordova = {
           },
           function (error) {
               alert("Scanning failed: " + error);
-          }, {
           }
     },
     // Update DOM on a Received Event
