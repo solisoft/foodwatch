@@ -79,6 +79,26 @@ var mainView = app.views.create('.view-main');
 
 var $$ = Dom7;
 
+var codebar = function(){
+  cordova.plugins.barcodeScanner.scan(
+    function (result) {
+      console.log("We got a barcode\n" +
+              "Result: " + result.text + "\n" +
+              "Format: " + result.format + "\n" +
+              "Cancelled: " + result.cancelled);
+      $$("#code").val(result.text)
+      mainView.router.navigate({
+        name: "product",
+        params: { id: result.text }
+      })
+    },
+    function (error) {
+        alert("Scanning failed: " + error);
+    }, {
+    }
+ );
+}
+
 if(window.localStorage.getItem("jwt") === null) {
   $$("#signin").removeClass("hidden")
   $$("#signup").removeClass("hidden")
@@ -142,10 +162,13 @@ $$("#signin-btn").on("click", function(e) {
 $$("#getdata").on("click", function(){
   var id = $$("#code").val()
   //var id = "3029330003533"
-  window.localStorage.setItem("product", id)
-  console.log(mainView.router)
   mainView.router.navigate({
     name: "product",
     params: { id: id }
   })
 })
+
+$$("#scan").on("click", function(){
+  codebar()
+})
+
